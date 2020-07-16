@@ -8,7 +8,7 @@ def get_currencies
   cryptos = Array.new(0)
 
   page.css(".cmc-table-row").each.with_index do |line, index|
-    
+
     symbol = line.css(".cmc-table__cell--sort-by__symbol").text
     price = line.css(".cmc-table__cell--sort-by__price").text.gsub("$", "").gsub(",", "").to_f
 
@@ -22,3 +22,4 @@ def get_currencies
   return cryptos
 end
 
+get_currencies()
